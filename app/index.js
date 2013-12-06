@@ -25,7 +25,7 @@ JbakeGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     type: 'confirm',
     name: 'someOption',
-    message: 'Would you like to enable this option?',
+    message: 'Would you like to generate JBake scaffolding in this folder?',
     default: true
   }];
 
@@ -37,6 +37,10 @@ JbakeGenerator.prototype.askFor = function askFor() {
 };
 
 JbakeGenerator.prototype.app = function app() {
+  this.mkdir('assets');
+  this.mkdir('content');
+  this.mkdir('templates');
+
   this.mkdir('app');
   this.mkdir('app/templates');
 
